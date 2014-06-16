@@ -339,7 +339,7 @@ module Fog
 
         def request(params, parse_json = true, &block)
           begin
-            response = @connection.request(params.merge!({
+            response = @connection.request(params.merge({
               :headers  => {
                 'Content-Type' => 'application/json',
                 'Accept'       => 'application/json',
@@ -371,7 +371,7 @@ module Fog
         # this request is used only for get_shared_container and get_shared_object calls
         def shared_request(params, parse_json = true, &block)
           begin
-            response = @connection.request(params.merge!({
+            response = @connection.request(params.merge({
               :headers  => {
                 'Content-Type' => 'application/json',
                 'Accept'       => 'application/json',
